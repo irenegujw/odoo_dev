@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+      <record model="ir.ui.view" id="odoo_real_estate_tree_view">
+        <field name="name">odoo.real.estate.tree.view</field>
+        <field name="model">odoo.real.estate</field>
+        <!-- above is model._name-->
+        <field name="arch" type="xml">
+          <tree>
+            <field name="active"/>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="postcode"/>
+            <field name="bedrooms"/>
+            <field name="expected_price"/>
+            <!-- show in the table do not need to put all the fields-->
+          </tree>
+        </field>
+      </record>
+
+    <record model="ir.ui.view" id="odoo_real_estate_form_view">
+      <field name="name">odoo.real.estate.form.view</field>
+      <field name="model">odoo.real.estate</field>
+      <field name="arch" type="xml">
+        <form string="real_estate">
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="postcode"/>
+            <field name="date_availability"/>
+            <field name="bedrooms"/>
+            <field name="expected_price"/>
+            <field name="selling_price"/>
+            <field name="living_area"/>
+            <field name="facades"/>
+            <field name="garage"/>
+            <field name="garden"/>
+            <field name="garden_area"/>
+            <field name="garden_orientation"/>
+            <field name="active"/>
+            <field name="state"/>
+
+
+<!--            register new real_estates with these fields-->
+          </group>
+
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_real_estate_action">
+      <field name="name">Properties</field>
+      <field name="res_model">odoo.real.estate</field>
+      <field name="view_mode">tree,form</field>
+
+    </record>
+<!--real_estate ->wblearns->real_estate list -->
+
+    <menuitem name="Real Estate"
+              id="odoo_real_estate_menu_root"/>
+
+    <menuitem name="Advertisements"
+              id="odoo_real_estate_menu_sub"
+              parent="odoo_real_estate_menu_root"/>
+
+
+    <menuitem name="Properties"
+              id="odoo_real_estate_menu"
+              action="odoo_real_estate_action"
+              parent="odoo_real_estate_menu_sub"/>
+              <!-- direct to the page of above section, shows the real_estate form  -->
+<!--here name="" refers to what shows in the page-->
+
+
+
+  </data>
+</odoo>
