@@ -18,13 +18,13 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['student'],
+    'depends': [],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/menu.xml',
         'views/views.xml',
+        'views/menu.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

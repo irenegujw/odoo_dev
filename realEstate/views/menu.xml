@@ -1,0 +1,33 @@
+<odoo>
+    <menuitem name="Real Estate"
+              id="odoo_real_estate_menu_root"/>
+
+    <menuitem name="Advertisements"
+              id="odoo_real_estate_menu_sub_advertisement"
+              parent="odoo_real_estate_menu_root"/>
+
+
+    <menuitem name="Properties"
+                id="odoo_real_estate_properties"
+                action="odoo_real_estate_action"
+                parent="odoo_real_estate_menu_sub_advertisement"/>
+
+    <menuitem name="Settings"
+              id="odoo_real_estate_menu_sub_setting"
+              parent="odoo_real_estate_menu_root"/>
+
+    <menuitem name="Property Type"
+                id="odoo_real_estate_property_type"
+                action="odoo_real_estate_action"
+                parent="odoo_real_estate_menu_sub_setting"/>
+
+    <menuitem name="Property Tags"
+                id="odoo_real_estate_property_tags"
+                action="odoo_real_estate_action"
+                parent="odoo_real_estate_menu_sub_setting"/>
+
+
+
+
+
+</odoo>

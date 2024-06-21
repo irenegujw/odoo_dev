@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+      <record model="ir.ui.view" id="odoo_school_tree_view">
+        <field name="name">odoo.school.tree.view</field>
+        <field name="model">odoo.school</field>
+        <!-- above is model._name-->
+        <field name="arch" type="xml">
+          <tree>
+            <field name="id"/>
+            <field name="name"/>
+            <!-- do not need to put all the fields-->
+          </tree>
+        </field>
+      </record>
+
+    <record model="ir.ui.view" id="odoo_school_form_view">
+      <field name="name">odoo.school.form.view</field>
+      <field name="model">odoo.school</field>
+      <field name="arch" type="xml">
+        <form string="School">
+          <group>
+              <field name="name"/>
+              <field name="student_list"/>
+              <field name="ref_field_id"/>
+
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_school_action">
+      <field name="name">School</field>
+      <field name="res_model">odoo.school</field>
+      <field name="view_mode">tree,form</field>
+
+    </record>
+
+    <menuitem name="School"
+              id="odoo_school_menu_root"/>
+
+    <menuitem name="sub menu "
+              id="odoo_school_menu_sub"
+              parent="odoo_school_menu_root"/>
+
+    <menuitem name="School List"
+              id="odoo_school_menu"
+              action="odoo_school_action"
+              parent="odoo_school_menu_sub"/>
+
+  </data>
+</odoo>
