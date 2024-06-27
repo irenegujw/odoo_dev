@@ -1,0 +1,14 @@
+<odoo>
+<!--    <menuitem id="hospital_root"-->
+<!--              name="Hospital"-->
+<!--                sequence="0"/>-->
+
+<!--    <menuitem id="hospital_patient"-->
+<!--              name="Patients"-->
+<!--              parent="hospital_root"/>-->
+
+<!--    <menuitem name="Records"-->
+<!--              id="patient_record"-->
+<!--              action="action_patient"-->
+<!--              parent="hospital_patient"/>-->
+</odoo>

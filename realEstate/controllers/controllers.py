@@ -4,6 +4,6 @@ from odoo.http import route
 
 
 class RealEstateController(http.Controller):
-    @http.route('/RealEstate',type='http', auth='public',website=True)
-    def index(self,**kwargs):
-        return "RealEstate"
+    @http.route('/RealEstate/Properties', type='http', auth='public', website=True)
+    def display_properties(self, **kw):
+        return "realEstate"

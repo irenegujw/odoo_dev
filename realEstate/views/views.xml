@@ -39,7 +39,6 @@
             <field name="active"/>
             <field name="state"/>
 
-
 <!--            register new real_estates with these fields-->
           </group>
 

@@ -1,60 +1,49 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="hospital.list">
-      <field name="name">hospital list</field>
-      <field name="model">hospital.hospital</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
-    -->
+    <data>
+        <record model="ir.ui.view" id="hospital_patient_tree_view">
+            <field name="name">hospital.patient.tree.view</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <tree string="Patients">
+                    <field name="patient_name"/>
+                    <field name="patient_age"/>
+                    <field name="notes"/>
+                    <!-- show in the table do not need to put all the fields-->
+                </tree>
+            </field>
+        </record>
 
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="hospital.action_window">
-      <field name="name">hospital window</field>
-      <field name="res_model">hospital.hospital</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
+        <record model="ir.ui.view" id="hospital_patient_form_view">
+            <field name="name">hospital.patient.form.view</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <form string="hospital_patient">
+                    <group>
+                        <field name="patient_name"/>
+                        <field name="patient_age"/>
+                        <field name="notes"/>
+<!--                        <field name="image"/>-->
+                    </group>
+                </form>
+            </field>
+        </record>
 
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="hospital.action_server">
-      <field name="name">hospital server</field>
-      <field name="model_id" ref="model_hospital_hospital"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
+        <record id="action_patient" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.patient</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree, form</field>
+            <field name="view_id" ref="hospital_patient_tree_view"/>
+            <field name="view_id" ref="hospital_patient_form_view"/>
+            <field name="help" type="html">
+                <p>
+                    Create your patient!
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_hospital_root" name="Hospital"/>
+        <menuitem id="menu_hospital_patients" name="Patients" parent="menu_hospital_root" action="action_patient"/>
+    </data>
 
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="hospital" id="hospital.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="hospital.menu_1" parent="hospital.menu_root"/>
-    <menuitem name="Menu 2" id="hospital.menu_2" parent="hospital.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="hospital.menu_1_list" parent="hospital.menu_1"
-              action="hospital.action_window"/>
-    <menuitem name="Server to list" id="hospital" parent="hospital.menu_2"
-              action="hospital.action_server"/>
-    -->
-  </data>
 </odoo>
