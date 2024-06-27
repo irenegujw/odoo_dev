@@ -53,23 +53,6 @@
       <field name="view_mode">tree,form</field>
 
     </record>
-<!--real_estate ->wblearns->real_estate list -->
-
-    <menuitem name="Real Estate"
-              id="odoo_real_estate_menu_root"/>
-
-    <menuitem name="Advertisements"
-              id="odoo_real_estate_menu_sub"
-              parent="odoo_real_estate_menu_root"/>
-
-
-    <menuitem name="Properties"
-              id="odoo_real_estate_menu"
-              action="odoo_real_estate_action"
-              parent="odoo_real_estate_menu_sub"/>
-              <!-- direct to the page of above section, shows the real_estate form  -->
-<!--here name="" refers to what shows in the page-->
-
 
 
   </data>
