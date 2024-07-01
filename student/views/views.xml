@@ -22,7 +22,7 @@
                 <form string="Student">
                     <group>
                         <header>
-                            <field name="school_data"/>
+<!--                            <field name="school_data"/>-->
                             <button name="json_data_store" type="object" string="JSON FEED"/>
                         </header>
                         <group>

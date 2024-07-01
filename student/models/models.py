@@ -50,10 +50,10 @@ class Student(models.Model):
 
     roll_number = fields.Integer("Roll Number")
 
-    school_data = fields.Json()
-
-    def json_data_store(self):
-        self.school_data = {"name": self.name, "roll_number": self.roll_number, "g": self.gender}
+    # school_data = fields.Json()
+    #
+    # def json_data_store(self):
+    #     self.school_data = {"name": self.name, "roll_number": self.roll_number, "g": self.gender}
 
     name1 = fields.Char("Name1", tracking=True, translate=True)
     name2 = fields.Char("Name2", copy=False)
